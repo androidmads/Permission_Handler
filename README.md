@@ -1,11 +1,4 @@
-<h2>Add a Permission Handler Library</h2>
-			compile 'com.androidmads.permissionhandler.library:PermissionHandler:1.0.0'
-			
-			repositories{
-    		maven{
-    			url 'https://dl.bintray.com/androidmads/maven'
-    		}
-			}
+<a href='https://bintray.com/androidmads/maven/com.androidmads.permissionhandler.library/_latestVersion'><img src='https://api.bintray.com/packages/androidmads/maven/com.androidmads.permissionhandler.library/images/download.svg'></a>
 			
 			
 <h2>How to use this Library</h2>
