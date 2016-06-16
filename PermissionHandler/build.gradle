@@ -3,14 +3,14 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.androidmads.permissionhandler.library' // Change this to match your package name
-version = '1.0.0' // Change this to match your version number
+version = '1.0.1' // Change this to match your version number
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -26,7 +26,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
 }
 
 bintray {
@@ -37,14 +37,15 @@ bintray {
         name = 'com.androidmads.permissionhandler.library'
 
         version {
-            name = '1.0.0'
-            desc = 'My First Library'
+            //noinspection GroovyAssignabilityCheck
+            name = '1.0.1'
+            desc = 'Permission Checker Library'
             released = new Date()
-            vcsTag = '1.0.0'
+            vcsTag = '1.0.1'
         }
 
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/androidmads/PermissionHandler.git'
+        vcsUrl = 'https://github.com/androidmads/Permission_Handler.git'
         websiteUrl = 'https://androidmads.blogspot.com'
     }
     configurations = ['archives']
@@ -57,8 +58,7 @@ task generateSourcesJar(type: Jar) {
 
 task generateJavadocs(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath()
-            .join(File.pathSeparator))
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 
 task generateJavadocsJar(type: Jar) {
